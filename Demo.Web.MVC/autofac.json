@@ -1,0 +1,16 @@
+{
+  "components": [
+    {
+      "type": "Demo.DAL.DemoDAL,Demo.DAL",
+      "services": [
+        {
+          "type": "Demo.IDAL.IDemoDAL,Demo.IDAL"
+        }
+      ]
+    },
+    {
+      "type": "Demo.Web.MVC.Controllers.HomeController,Demo.Web.VC",
+      "injectProperties": true //是否启用属性注入
+    }
+  ]
+}
