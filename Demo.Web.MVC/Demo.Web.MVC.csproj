@@ -5,11 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.1" />
+    <PackageReference Include="Autofac.Configuration" Version="4.1.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Demo.BLL\Demo.BLL.csproj" />
+    <ProjectReference Include="..\Demo.DAL\Demo.DAL.csproj" />
+    <ProjectReference Include="..\Demo.IBLL\Demo.IBLL.csproj" />
     <ProjectReference Include="..\Demo.IDAL\Demo.IDAL.csproj" />
   </ItemGroup>
 
@@ -26,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="autofac.json">
+    <Content Update="wwwroot\ConfigFile\autofac.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

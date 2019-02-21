@@ -8,4 +8,9 @@
     <OutputPath>E:\ChaoSundry\ChaoCode\DoNet\UM007.NetCore.Demo\Demo.Web.MVC\bin\Debug\</OutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.IBLL\Demo.IBLL.csproj" />
+    <ProjectReference Include="..\Demo.IDAL\Demo.IDAL.csproj" />
+  </ItemGroup>
+
 </Project>

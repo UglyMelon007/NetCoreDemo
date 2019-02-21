@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using Demo.IBLL;
 using Microsoft.AspNetCore.Mvc;
 using Demo.Web.MVC.Models;
 
@@ -10,7 +7,12 @@ namespace Demo.Web.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private IDAL.IDemoDAL demoDal;
+        private IDemoBLL _demoBll;
+        public HomeController(IDemoBLL demoBll)
+        {
+            _demoBll = demoBll;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -18,7 +20,7 @@ namespace Demo.Web.MVC.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = $"Your application description page. {demoDal.GetHello("方")}";
+            ViewData["Message"] = $"Your application description page. {_demoBll.GetHello("方")}";
 
             return View();
         }

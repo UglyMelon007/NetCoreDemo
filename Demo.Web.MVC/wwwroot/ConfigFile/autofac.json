@@ -1,0 +1,28 @@
+{
+  "components": [
+    {
+      "type": "Demo.DAL.DemoDAL,Demo.DAL",
+      "services": [
+        {
+          "type": "Demo.IDAL.IDemoDAL,Demo.IDAL"
+        }
+      ],
+      "autoActivate": true, 
+      "injectProperties": true
+    },
+    {
+      "type": "Demo.BLL.DemoBLL,Demo.BLL",
+      "services": [
+        {
+          "type": "Demo.IBLL.IDemoBLL,Demo.IBLL"
+        }
+      ],
+      "autoActivate": true, 
+      "injectProperties": true
+    },
+    {
+      "type": "Demo.Web.MVC.Controllers.HomeController,Demo.Web.MVC",
+      "injectProperties": true
+    }
+  ]
+}
