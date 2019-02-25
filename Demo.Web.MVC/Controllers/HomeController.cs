@@ -2,12 +2,15 @@
 using Demo.IBLL;
 using Microsoft.AspNetCore.Mvc;
 using Demo.Web.MVC.Models;
+using log4net;
 
 namespace Demo.Web.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private IDemoBLL _demoBll;
+        private readonly IDemoBLL _demoBll;
+        private readonly ILog _log = LogManager.GetLogger(Startup.Repository.Name, typeof(HomeController));
+
         public HomeController(IDemoBLL demoBll)
         {
             _demoBll = demoBll;
@@ -15,6 +18,7 @@ namespace Demo.Web.MVC.Controllers
 
         public IActionResult Index()
         {
+            _log.Info("hello");
             return View();
         }
 

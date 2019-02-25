@@ -1,15 +1,31 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="log4net.config" />
+    <Content Remove="nhibernate.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="nhibernate.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.9.1" />
     <PackageReference Include="Autofac.Configuration" Version="4.1.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" />
+    <PackageReference Include="NHibernate.NetCore" Version="1.1.2" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.18.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +33,7 @@
     <ProjectReference Include="..\Demo.DAL\Demo.DAL.csproj" />
     <ProjectReference Include="..\Demo.IBLL\Demo.IBLL.csproj" />
     <ProjectReference Include="..\Demo.IDAL\Demo.IDAL.csproj" />
+    <ProjectReference Include="..\Demo.Log4Net\Demo.Log4Net.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,12 +46,6 @@
     <Reference Include="Autofac.Extensions.DependencyInjection">
       <HintPath>C:\Users\UM007\.nuget\packages\autofac.extensions.dependencyinjection\4.0.0\lib\netstandard1.1\Autofac.Extensions.DependencyInjection.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="wwwroot\ConfigFile\autofac.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>

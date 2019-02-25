@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+
 namespace Demo.Web.MVC
 {
     public class Program
