@@ -21,7 +21,7 @@ namespace Demo.Log4Net
         /// 属性注入
         /// </summary>
         /// <param name="instance"></param>
-        private  void InjectLoggerProperties(object instance)
+        private void InjectLoggerProperties(object instance)
         {
             var instanceType = instance.GetType();
 
@@ -48,7 +48,7 @@ namespace Demo.Log4Net
                     new ResolvedParameter(
                         (p, i) => p.ParameterType == typeof(ILog),
                         (p, i) => LogManager.GetLogger(RepositoryName, p.Member.DeclaringType)
-                    ),
+                    )
                 });
         }
     }

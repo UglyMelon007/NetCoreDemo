@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Log\**" />
+    <Content Remove="Log\**" />
+    <EmbeddedResource Remove="Log\**" />
+    <None Remove="Log\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="log4net.config" />
     <Content Remove="nhibernate.config" />
   </ItemGroup>

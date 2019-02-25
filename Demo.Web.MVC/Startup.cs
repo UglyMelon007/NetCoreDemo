@@ -28,8 +28,8 @@ namespace Demo.Web.MVC
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddJsonFile("appsettings.json", true, true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true)
                 .AddEnvironmentVariables();
 
             Configuration = builder.Build();
@@ -55,15 +55,16 @@ namespace Demo.Web.MVC
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             //NHibernate
-            Configuration config = new Configuration().Configure("nhibernate.config");
-            ISessionFactory sessionFactory = config.BuildSessionFactory();
+            var config = new Configuration().Configure("nhibernate.config");
+            var sessionFactory = config.BuildSessionFactory();
 
             var containerBuilder = new ContainerBuilder();
 
             //将NHiberate的核心类注入到容器
             containerBuilder.RegisterInstance(config).As<Configuration>().SingleInstance();
             containerBuilder.RegisterInstance(sessionFactory).As<ISessionFactory>().SingleInstance();
-            containerBuilder.Register(x => x.Resolve<ISessionFactory>().OpenSession()).As<NHibernate.ISession>().InstancePerLifetimeScope();
+            containerBuilder.Register(x => x.Resolve<ISessionFactory>().OpenSession()).As<NHibernate.ISession>()
+                .InstancePerLifetimeScope();
 
             //注册项目操作类
             containerBuilder.RegisterType<DemoDAL>().As<IDemoDAL>();
@@ -71,7 +72,7 @@ namespace Demo.Web.MVC
             containerBuilder.RegisterType<HomeController>();
 
             //注册日志类
-            containerBuilder.RegisterModule(new LoggingModule() {RepositoryName = Repository.Name});
+            containerBuilder.RegisterModule(new LoggingModule {RepositoryName = Repository.Name});
 
 
             containerBuilder.Populate(services);
@@ -100,8 +101,8 @@ namespace Demo.Web.MVC
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    "default",
+                    "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

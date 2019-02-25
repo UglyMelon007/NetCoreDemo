@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Demo.IBLL
+﻿namespace Demo.IBLL
 {
     public interface IDemoBLL
     {

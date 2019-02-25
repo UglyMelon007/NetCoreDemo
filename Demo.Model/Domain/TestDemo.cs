@@ -10,8 +10,8 @@ namespace Demo.Model.Domain
     public class TestDemo
     {
         #region Member Variables
-        protected string _id;
-        protected string _name;
+        private string _id;
+        private string _name;
 
 
         #endregion
@@ -22,7 +22,7 @@ namespace Demo.Model.Domain
 
         public TestDemo(string name)
         {
-            this._name = name;
+            _name = name;
         }
 
         #endregion
@@ -30,22 +30,22 @@ namespace Demo.Model.Domain
         #region Public Properties
         public virtual string Id
         {
-            get { return _id; }
+            get => _id;
             set
             {
                 if (value != null && value.Length > 384)
-                    throw new ArgumentOutOfRangeException("Invalid value for Id", value, value.ToString());
+                    throw new ArgumentOutOfRangeException("Invalid value for Id", value, value);
                 _id = value;
             }
         }
 
         public virtual string Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 if (value != null && value.Length > 192)
-                    throw new ArgumentOutOfRangeException("Invalid value for Name", value, value.ToString());
+                    throw new ArgumentOutOfRangeException("Invalid value for Name", value, value);
                 _name = value;
             }
         }

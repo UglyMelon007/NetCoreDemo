@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Demo.IDAL
+﻿namespace Demo.IDAL
 {
     public interface IDemoDAL
     {
