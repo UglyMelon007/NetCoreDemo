@@ -42,7 +42,6 @@ namespace DataSourceTest
             //注册项目操作类
             containerBuilder.RegisterType<DemoDAL>().As<IDemoDAL>();
             containerBuilder.RegisterType<DemoBLL>().As<IDemoBLL>();
-            containerBuilder.RegisterType<DemoDALTest>();
 
             //注册日志类
             containerBuilder.RegisterModule(new LoggingModule { RepositoryName = repository.Name });

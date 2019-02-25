@@ -15,7 +15,7 @@ namespace Demo.BLL
 
         public string GetHello(string name)
         {
-            return _demoDal.GetHello(name) + " 超";
+            return _demoDal.GetHello(name);
         }
     }
 }

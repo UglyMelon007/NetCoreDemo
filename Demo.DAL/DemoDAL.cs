@@ -17,7 +17,7 @@ namespace Demo.DAL
         public string GetHello(string name)
         {
             var temp = _session.Query<TestDemo>().ToList().Last();
-            return $"Hello {temp.Name} ！ ！";
+            return $"Hello {temp.Name}  {name} ！ ！";
         }
     }
 }
