@@ -5,7 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspectCore.Extensions.Autofac" Version="1.2.0" />
+    <PackageReference Include="Autofac" Version="4.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.AspectCore\Demo.AspectCore.csproj" />
     <ProjectReference Include="..\Demo.BLL\Demo.BLL.csproj" />
+    <ProjectReference Include="..\Demo.Common\Demo.Common.csproj" />
     <ProjectReference Include="..\Demo.DAL\Demo.DAL.csproj" />
     <ProjectReference Include="..\Demo.IBLL\Demo.IBLL.csproj" />
     <ProjectReference Include="..\Demo.IDAL\Demo.IDAL.csproj" />
@@ -13,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="AspectCore.Extensions.Autofac">
+      <HintPath>C:\Users\UM007\.nuget\packages\aspectcore.extensions.autofac\1.2.0\lib\netstandard2.0\AspectCore.Extensions.Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="Autofac">
       <HintPath>C:\Users\UM007\.nuget\packages\autofac\4.9.1\lib\netstandard2.0\Autofac.dll</HintPath>
     </Reference>

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Demo.Common;
 using Demo.IBLL;
 using Microsoft.AspNetCore.Mvc;
 using Demo.Web.MVC.Models;
@@ -9,7 +10,7 @@ namespace Demo.Web.MVC.Controllers
     public class HomeController : Controller
     {
         private readonly IDemoBLL _demoBll;
-        private readonly ILog _log = LogManager.GetLogger(Startup.RepositoryName, typeof(HomeController));
+        private readonly ILog _log = LogManager.GetLogger(GlobalAttribute.RepositoryName, typeof(HomeController));
 
         public HomeController(IDemoBLL demoBll)
         {

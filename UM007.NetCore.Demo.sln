@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Autofac", "Demo.Autofa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.AspectCore", "Demo.AspectCore\Demo.AspectCore.csproj", "{E862838F-6F13-49C6-8AC2-2846DC3FF02E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Common", "Demo.Common\Demo.Common.csproj", "{4CC84D6A-BDD9-4A0B-A62C-D2BF52A034A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,10 @@ Global
 		{E862838F-6F13-49C6-8AC2-2846DC3FF02E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E862838F-6F13-49C6-8AC2-2846DC3FF02E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E862838F-6F13-49C6-8AC2-2846DC3FF02E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CC84D6A-BDD9-4A0B-A62C-D2BF52A034A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CC84D6A-BDD9-4A0B-A62C-D2BF52A034A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CC84D6A-BDD9-4A0B-A62C-D2BF52A034A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CC84D6A-BDD9-4A0B-A62C-D2BF52A034A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +111,7 @@ Global
 		{384BA558-E3D3-47CF-9781-4F3FB5EF41CC} = {0D00B094-51A1-4557-9EAD-D7DEE43D3D94}
 		{0839A253-6BB5-4AA6-9276-CDE5AFCB5246} = {5DE8A7B2-D1CD-477D-853A-73FE9FCE7CA5}
 		{E862838F-6F13-49C6-8AC2-2846DC3FF02E} = {5DE8A7B2-D1CD-477D-853A-73FE9FCE7CA5}
+		{4CC84D6A-BDD9-4A0B-A62C-D2BF52A034A1} = {8780033E-8D5F-45FC-AE61-FF03FEDDE73C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {08535048-8016-4158-AA8B-87E1D39BFA31}

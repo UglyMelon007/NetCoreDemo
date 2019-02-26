@@ -1,5 +1,6 @@
 ﻿using System;
 using Demo.Autofac;
+using Demo.Common;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,8 +11,6 @@ namespace Demo.API
 {
     public class Startup
     {
-        public static string RepositoryName { get; set; }
-
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -21,7 +20,7 @@ namespace Demo.API
                 .AddEnvironmentVariables();
 
             Configuration = builder.Build();
-            RepositoryName = Configuration.GetSection("Log4Net").GetSection("RepositoryName").Value;
+            GlobalAttribute.RepositoryName = Configuration.GetSection("Log4Net").GetSection("RepositoryName").Value;
         }
 
         public IConfiguration Configuration { get; }
@@ -31,7 +30,7 @@ namespace Demo.API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             //使用Autofac替换内置DI
-            return AutofacModule.InitWeb(RepositoryName, services);
+            return AutofacModule.InitWeb(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
