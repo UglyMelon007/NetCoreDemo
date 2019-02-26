@@ -1,28 +1,29 @@
 using System;
+using System.Collections;
 
 namespace Demo.Model.Domain
 {
-    #region TestDemo
+    #region TESTDEMO
 
     /// <summary>
     /// TESTDEMO object for NHibernate mapped table 'TESTDEMO'.
     /// </summary>
-    public class TestDemo
+    public class TESTDEMO
     {
         #region Member Variables
         private string _id;
-        private string _name;
+        private string _sTAFFNAME;
 
 
         #endregion
 
         #region Constructors
 
-        public TestDemo() { }
+        public TESTDEMO() { }
 
-        public TestDemo(string name)
+        public TESTDEMO(string sTAFFNAME)
         {
-            _name = name;
+            this._sTAFFNAME = sTAFFNAME;
         }
 
         #endregion
@@ -34,19 +35,19 @@ namespace Demo.Model.Domain
             set
             {
                 if (value != null && value.Length > 384)
-                    throw new ArgumentOutOfRangeException("Invalid value for Id", value, value);
+                    throw new ArgumentOutOfRangeException("Invalid value for Id", value, value.ToString());
                 _id = value;
             }
         }
 
-        public virtual string Name
+        public virtual string STAFFNAME
         {
-            get => _name;
+            get => _sTAFFNAME;
             set
             {
                 if (value != null && value.Length > 192)
-                    throw new ArgumentOutOfRangeException("Invalid value for Name", value, value);
-                _name = value;
+                    throw new ArgumentOutOfRangeException("Invalid value for STAFFNAME", value, value.ToString());
+                _sTAFFNAME = value;
             }
         }
 

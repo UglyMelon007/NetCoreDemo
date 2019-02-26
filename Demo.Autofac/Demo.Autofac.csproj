@@ -1,22 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Demo.BLL\Demo.BLL.csproj" />
     <ProjectReference Include="..\Demo.DAL\Demo.DAL.csproj" />
     <ProjectReference Include="..\Demo.IBLL\Demo.IBLL.csproj" />
-    <ProjectReference Include="..\Demo.Web.MVC\Demo.Web.MVC.csproj" />
+    <ProjectReference Include="..\Demo.IDAL\Demo.IDAL.csproj" />
+    <ProjectReference Include="..\Demo.Log4Net\Demo.Log4Net.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Autofac">
       <HintPath>C:\Users\UM007\.nuget\packages\autofac\4.9.1\lib\netstandard2.0\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac.Extensions.DependencyInjection">
+      <HintPath>C:\Users\UM007\.nuget\packages\autofac.extensions.dependencyinjection\4.3.1\lib\netstandard2.0\Autofac.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
-      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <HintPath>C:\Users\UM007\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
   </ItemGroup>
 
