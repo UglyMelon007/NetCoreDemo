@@ -18,8 +18,12 @@ namespace Demo.Autofac
 {
     public static class AutofacModule
     {
-        public static IServiceProvider InitWeb(ILoggerRepository  repository, IServiceCollection services)
+        public static IServiceProvider InitWeb(string repositoryName, IServiceCollection services)
         {
+            //log4net配置
+            ILoggerRepository repository = LogManager.CreateRepository(repositoryName);
+            XmlConfigurator.Configure(repository, new FileInfo("log4net.config"));
+
             //NHibernate
             var config = new Configuration().Configure("nhibernate.config");
             var sessionFactory = config.BuildSessionFactory();
@@ -29,7 +33,7 @@ namespace Demo.Autofac
             //将NHiberate的核心类注入到容器
             containerBuilder.RegisterInstance(config).As<Configuration>().SingleInstance();
             containerBuilder.RegisterInstance(sessionFactory).As<ISessionFactory>().SingleInstance();
-            containerBuilder.Register(x => x.Resolve<ISessionFactory>().OpenSession()).As<NHibernate.ISession>()
+            containerBuilder.Register(x => x.Resolve<ISessionFactory>().OpenSession()).As<ISession>()
                 .InstancePerLifetimeScope();
 
             //注册日志类
@@ -45,6 +49,7 @@ namespace Demo.Autofac
             var container = containerBuilder.Build();
             return new AutofacServiceProvider(container);
         }
+
         public static IContainer InitTest()
         {
             //log4net配置
@@ -60,7 +65,7 @@ namespace Demo.Autofac
             //将NHiberate的核心类注入到容器
             containerBuilder.RegisterInstance(config).As<Configuration>().SingleInstance();
             containerBuilder.RegisterInstance(sessionFactory).As<ISessionFactory>().SingleInstance();
-            containerBuilder.Register(x => x.Resolve<ISessionFactory>().OpenSession()).As<NHibernate.ISession>()
+            containerBuilder.Register(x => x.Resolve<ISessionFactory>().OpenSession()).As<ISession>()
                 .InstancePerLifetimeScope();
 
             //注册日志类

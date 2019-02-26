@@ -9,7 +9,7 @@ namespace Demo.Web.MVC.Controllers
     public class HomeController : Controller
     {
         private readonly IDemoBLL _demoBll;
-        private readonly ILog _log = LogManager.GetLogger(Startup.Repository.Name, typeof(HomeController));
+        private readonly ILog _log = LogManager.GetLogger(Startup.RepositoryName, typeof(HomeController));
 
         public HomeController(IDemoBLL demoBll)
         {

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.IO;
 using Demo.Autofac;
-using log4net;
-using log4net.Config;
-using log4net.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -15,6 +11,8 @@ namespace Demo.Web.MVC
 {
     public class Startup
     {
+        public static string RepositoryName { get; set; }
+
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -24,15 +22,11 @@ namespace Demo.Web.MVC
                 .AddEnvironmentVariables();
 
             Configuration = builder.Build();
-
-            //log4net配置
-            Repository = LogManager.CreateRepository("NETCoreRepository");
-            XmlConfigurator.Configure(Repository, new FileInfo("log4net.config"));
+            RepositoryName = Configuration.GetSection("Log4Net").GetSection("RepositoryName").Value;
         }
 
         public IConfiguration Configuration { get; }
 
-        public static ILoggerRepository Repository { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -47,7 +41,7 @@ namespace Demo.Web.MVC
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             //使用Autofac替换内置DI
-            return AutofacModule.InitWeb(Repository, services);
+            return AutofacModule.InitWeb(RepositoryName,services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
