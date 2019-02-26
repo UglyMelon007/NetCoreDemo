@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Demo.IBLL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Demo.API.Controllers
@@ -10,18 +11,25 @@ namespace Demo.API.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly IDemoBLL _demoBll;
+
+        public ValuesController(IDemoBLL demoBll)
+        {
+            _demoBll = demoBll;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] {"姓名", _demoBll.GetHello("方")};
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            return "value" + id;
         }
 
         // POST api/values
