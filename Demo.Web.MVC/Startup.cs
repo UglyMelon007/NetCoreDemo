@@ -36,10 +36,7 @@ namespace Demo.Web.MVC
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            services.AddDynamicProxy(config =>
-            {
-                config.Interceptors.AddTyped<AuthenticateInterceptor>();
-            });
+          
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             //使用Autofac替换内置DI

@@ -37,8 +37,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Demo.Autofac\Demo.Autofac.csproj" />
-    <ProjectReference Include="..\Demo.IBLL\Demo.IBLL.csproj" />
-    <ProjectReference Include="..\Demo.Log4Net\Demo.Log4Net.csproj" />
   </ItemGroup>
 
   <ItemGroup>

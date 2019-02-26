@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Demo.Autofac\Demo.Autofac.csproj" />
-    <ProjectReference Include="..\Demo.IBLL\Demo.IBLL.csproj" />
   </ItemGroup>
 
   <ItemGroup>
