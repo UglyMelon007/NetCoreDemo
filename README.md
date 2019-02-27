@@ -1,2 +1,8 @@
 # NetCoreDemo
-使用asp.net core mvc + asp.net core api +  nhibernate + autofac + log4net + aspectcore + mstest组建的一个测试项目
+## 所用框架
+1. [Asp.Net Core MVC](https://docs.microsoft.com/zh-cn/aspnet/core/mvc/overview?view=aspnetcore-2.2)
+1. [Asp.Net Core API](https://docs.microsoft.com/zh-cn/aspnet/core/web-api/?view=aspnetcore-2.1)
+1. [Autofac](https://autofaccn.readthedocs.io/zh/latest/getting-started/index.html)
+1. [NHibernate](https://nhibernate.info/)
+1. [AspectCore](https://github.com/dotnetcore/AspectCore-Framework)
+1. [Log4Net](http://logging.apache.org/log4net/)
