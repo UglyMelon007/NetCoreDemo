@@ -42,6 +42,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Common", "Demo.Common\Demo.Common.csproj", "{4CC84D6A-BDD9-4A0B-A62C-D2BF52A034A1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadMe", "ReadMe", "{F9120421-78BF-4BF8-ACC4-65D1346C898B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
