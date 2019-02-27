@@ -37,9 +37,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.API", "Demo.API\Demo.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Autofac", "Demo.Autofac\Demo.Autofac.csproj", "{0839A253-6BB5-4AA6-9276-CDE5AFCB5246}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.AspectCore", "Demo.AspectCore\Demo.AspectCore.csproj", "{E862838F-6F13-49C6-8AC2-2846DC3FF02E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.AspectCore", "Demo.AspectCore\Demo.AspectCore.csproj", "{E862838F-6F13-49C6-8AC2-2846DC3FF02E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Common", "Demo.Common\Demo.Common.csproj", "{4CC84D6A-BDD9-4A0B-A62C-D2BF52A034A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Common", "Demo.Common\Demo.Common.csproj", "{4CC84D6A-BDD9-4A0B-A62C-D2BF52A034A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadMe", "ReadMe", "{F9120421-78BF-4BF8-ACC4-65D1346C898B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
