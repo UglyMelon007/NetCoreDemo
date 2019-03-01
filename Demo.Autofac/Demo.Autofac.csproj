@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Demo.IBLL\Demo.IBLL.csproj" />
     <ProjectReference Include="..\Demo.IDAL\Demo.IDAL.csproj" />
     <ProjectReference Include="..\Demo.Log4Net\Demo.Log4Net.csproj" />
+    <ProjectReference Include="..\Demo.NHibernate\Demo.NHibernate.csproj" />
   </ItemGroup>
 
   <ItemGroup>

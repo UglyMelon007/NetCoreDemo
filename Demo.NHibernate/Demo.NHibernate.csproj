@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>C:\Users\UM007\.nuget\packages\autofac\4.4.0\lib\netstandard1.1\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>C:\Users\UM007\.nuget\packages\nhibernate\5.2.3\lib\netcoreapp2.0\NHibernate.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

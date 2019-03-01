@@ -1,6 +1,7 @@
 ﻿using System;
 using Autofac;
 using Demo.Autofac;
+using Demo.Common;
 using Demo.IBLL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -15,6 +16,7 @@ namespace DataSourceTest
         [TestInitialize]
         public void TestInit()
         {
+            GlobalAttribute.RepositoryName = "NetCoreDemo";
             _container = AutofacModule.InitTest();
         }
 

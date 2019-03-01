@@ -4,6 +4,7 @@ using Demo.Common;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -29,6 +30,15 @@ namespace Demo.API
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.Configure<MvcOptions>(options =>
+                {
+                    options.Filters.Add(new CorsAuthorizationFilterFactory("AllowAllOrigins"));
+                });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    policy => { policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials(); });
+            });
             //使用Autofac替换内置DI
             return AutofacModule.InitWeb(services);
         }
