@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Demo.Common
+﻿namespace Demo.Common
 {
     public static class GlobalAttribute
     {

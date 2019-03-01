@@ -19,7 +19,7 @@ namespace Demo.API.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] {"姓名", _demoBll.GetHello("方")};
+            return new[] {"姓名", _demoBll.GetHello("方")};
         }
 
         // GET api/values/5
