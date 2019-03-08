@@ -9,13 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.8" />
-    <PackageReference Include="NHibernate" Version="5.2.3" />
+    <ProjectReference Include="..\Demo.IDAL\Demo.IDAL.csproj" />
+    <ProjectReference Include="..\Demo.Model\Demo.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Demo.IDAL\Demo.IDAL.csproj" />
-    <ProjectReference Include="..\Demo.Model\Demo.Model.csproj" />
+    <Reference Include="log4net">
+      <HintPath>C:\Users\UM007\.nuget\packages\log4net\2.0.8\lib\netstandard1.3\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>C:\Users\UM007\.nuget\packages\nhibernate\5.2.4\lib\netcoreapp2.0\NHibernate.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

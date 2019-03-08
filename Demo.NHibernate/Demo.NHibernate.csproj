@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NHibernate.NetCore" Version="1.1.2" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.18.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Autofac">
       <HintPath>C:\Users\UM007\.nuget\packages\autofac\4.4.0\lib\netstandard1.1\Autofac.dll</HintPath>
     </Reference>

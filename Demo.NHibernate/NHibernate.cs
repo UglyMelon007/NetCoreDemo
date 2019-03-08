@@ -7,10 +7,21 @@ namespace Demo.NHibernate
 {
     public class NHibernate
     {
-        public ContainerBuilder NhibernateInit(ContainerBuilder containerBuilder)
+        public ContainerBuilder SQLServerInit(ContainerBuilder containerBuilder)
         {
             //NHibernate配置
-            var nhibernateConfig = new Configuration().Configure("nhibernate.config");
+            var nhibernateConfig = new Configuration().Configure("sqlserver.config");
+            return NHibernateInit(nhibernateConfig, containerBuilder);
+        }
+
+        public ContainerBuilder OracleInit(ContainerBuilder containerBuilder)
+        {
+            //NHibernate配置
+            var nhibernateConfig = new Configuration().Configure("oracle.config");
+            return NHibernateInit(nhibernateConfig, containerBuilder);
+        }
+        public ContainerBuilder NHibernateInit(Configuration nhibernateConfig, ContainerBuilder containerBuilder)
+        {
             var sessionFactory = nhibernateConfig.BuildSessionFactory();
 
             //将NHiberate的核心类注入到容器
@@ -19,6 +30,7 @@ namespace Demo.NHibernate
             containerBuilder.Register(x => x.Resolve<ISessionFactory>().OpenSession()).As<ISession>()
                 .InstancePerLifetimeScope();
             return containerBuilder;
+
         }
     }
 }
