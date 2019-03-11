@@ -14,13 +14,17 @@
   <ItemGroup>
     <Content Remove="log4net.config" />
     <Content Remove="oracle.config" />
+    <Content Remove="sqlserver.config" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="oracle.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="log4net.config">
+    <None Include="sqlserver.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
