@@ -1,5 +1,4 @@
-﻿using System;
-using Autofac;
+﻿using Autofac;
 using NHibernate;
 using NHibernate.Cfg;
 
@@ -7,7 +6,7 @@ namespace Demo.NHibernate
 {
     public class NHibernate
     {
-        public ContainerBuilder SQLServerInit(ContainerBuilder containerBuilder)
+        public ContainerBuilder MsSqlInit(ContainerBuilder containerBuilder)
         {
             //NHibernate配置
             var nhibernateConfig = new Configuration().Configure("sqlserver.config");

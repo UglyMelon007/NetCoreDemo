@@ -29,7 +29,7 @@ namespace Demo.Autofac
         {
             var containerBuilder = new ContainerBuilder();
             //NHibernate相关配置信息
-            containerBuilder = new NHibernate.NHibernate().SQLServerInit(containerBuilder);
+            containerBuilder = new NHibernate.NHibernate().MsSqlInit(containerBuilder);
             //AspectCore相关配置信息
             containerBuilder = new AspectCore.AspectCore().AspectCoreInit(containerBuilder);
             //Log4Net相关配置信息
